@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="website">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title ng-bind="pageTitle"></title>
+	<meta name="description" content="{{ pageDescription }}">
+	<base href="/">
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	
+</head>
+<body>
+	<div id="wrapper">
+		<div class="container" role="document">
+			<header class="pageheader">
+				<ng-include src="'layout/navigation.html'"></ng-include>
+			</header>
+			<main class="main" role="main">
+				<section>
+					<div ui-view class="view"></div>
+				</section>
+			</main>
+			<footer>
+				<ng-include src="'layout/footer.html'"></ng-include>
+			</footer>
+		</div>
+	</div>
+	<div spinner class="preloader">
+		<div class="preloader__bg">
+			<div class="loader">Loading...</div>
+		</div>
+	</div>
+	<script src="js/bundle.js"></script>
+	<script src="js/all.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+//-----------------------------
+//
+// Component: Arrow
+//
+//-----------------------------
+
+$arrow-namespace: "arrow";
+
+.#{$arrow-namespace} {
+    &, &--down {
+        @include arrow(10px, currentColor, down);
+    }
+
+    &--left {
+        @include arrow(10px, currentColor, left);
+    }
+
+    &--right {
+        @include arrow(10px, currentColor, right);
+    }
+
+    &--up {
+        @include arrow(10px, currentColor, up);
+    }
+}

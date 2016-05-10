@@ -1,0 +1,10 @@
+<div class="row" ng-controller="navigationController as vm">
+	<div class="four columns">
+		<logo></logo>
+	</div>
+	<nav class="pageheader__nav eight columns" >
+		<ul class="pageheader__nav__list u-pull-right ">
+			<li  ng-repeat="r in vm.navRoutes" ng-class="vm.isCurrent(r)" class="pageheader__nav__list-item"><a ui-sref="{{r.title}}" >{{r.title}}</a></li>
+		</ul>
+	</nav>
+</div>
