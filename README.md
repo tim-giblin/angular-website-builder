@@ -24,7 +24,7 @@ You can see the builder in action here: [http://tim-giblin.github.io/angular-web
  ```bash
  $ gulp build
   ```
-**Watch** (http://localhost:8080)
+**Watch** [(http://localhost:8080)](http://localhost:8080)
  ```bash
  $ gulp 
   ```
