@@ -19,6 +19,7 @@ You can see the builder in action here: [http://]()
   ```
   
 **Move bower dependencies into a vendor folder using gulp:**
+
 *This command also concatenates the vendor JS into a file called **bundle.js** and puts it into the Dist folder.*
  ```bash
  $ gulp build
