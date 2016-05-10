@@ -4,7 +4,7 @@ To help start web projects using AngularJS and the [Skeleton Sass framework](htt
 
 ## Demo
 
-You can see the builder in action here: [http://]()
+You can see the builder in action here: [http://tim-giblin.github.io/angular-website-builder/](http://tim-giblin.github.io/angular-website-builder/)
 
 ## Installation
 
