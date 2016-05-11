@@ -2,7 +2,7 @@
 @import "variables/_all";
 
 //Skeleton Framework
-@import "lib/skeleton_template";
+@import "lib/skeleton/skeleton.scss"; // default dependencies
 
 // Mixins
 @import "mixins/_all";

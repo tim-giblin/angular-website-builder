@@ -1,6 +1,6 @@
 # AngularJS Website Builder
 
-To help start web projects using AngularJS and the [Skeleton Sass framework](https://github.com/atomicpages/skeleton-sass)
+To help start web projects using AngularJS and the [Skeleton Sass framework](https://github.com/whatsnewsaes/Skeleton-Sass)
 
 ## Demo
 

@@ -48,10 +48,8 @@ gulp.task('vendor_js_setup', function() {
 //move Sass bower files to vendor folder
 gulp.task('vendor_css_setup', function() {
 	//skeleton framework
-	return gulp.src([
-		'./bower_components/skeleton-sass/skeleton/**/*.scss',
-		'./bower_components/skeleton-sass/skeleton_template.scss'
-	]).pipe(gulp.dest(config.appSass()+config.vendorFolder));
+	return gulp.src('./bower_components/Skeleton-Sass/scss/**/*.scss')
+		.pipe(gulp.dest(config.appSass()+config.vendorFolder+'/skeleton'));
 
 });
 
@@ -114,7 +112,7 @@ gulp.task('deploy', function() {
 gulp.task('watch', function() {
 	gulp.watch([config.appSass()+'/**/*.scss',config.appSass()+'/*.scss'], ['sass']);
 	gulp.watch([config.angularFolder()+'/**/*.js',config.angularFolder()+'/*.js'], ['lint', 'scripts']);
-	gulp.watch([config.appFolder+'index.html',config.angularFolder()+'/**/*.html'], ['scripts', 'html']);
+	gulp.watch([config.appFolder+'index.html',config.angularFolder()+'/**/*.html',config.angularFolder()+'/*.html'], ['scripts', 'html']);
 });
 
 
