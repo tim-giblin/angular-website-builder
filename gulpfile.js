@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
-	copy = require('gulp-copy'),
 	stylish = require('jshint-stylish'),
 	uglify = require('gulp-uglify'),
 	concat = require('gulp-concat'),
