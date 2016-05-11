@@ -36,20 +36,30 @@ gulp.task('lint', function() {
 //move JS bower files to vendor folder
 gulp.task('vendor_js_setup', function() {
 	//angular
-	gulp.src('./bower_components/angular/angular.min.js').pipe(gulp.dest(config.appJs()+config.vendorFolder));
-	//angular animate
-	gulp.src('./bower_components/angular-animate/angular-animate.min.js').pipe(gulp.dest(config.appJs()+config.vendorFolder));
-	//angular ui router
-	gulp.src('./bower_components/angular-ui-router/release/angular-ui-router.min.js').pipe(gulp.dest(config.appJs()+config.vendorFolder));
-	//skeleton framework and themes
-	gulp.src('./bower_components/skeleton-sass/skeleton/**/*.scss').pipe(gulp.dest(config.appSass()+config.vendorFolder+'/skeleton'));
-	//skeleton scss loader
-	gulp.src('./bower_components/skeleton-sass/skeleton_template.scss').pipe(gulp.dest(config.appSass()+config.vendorFolder));
+	return gulp.src([
+		'./bower_components/angular/angular.min.js',
+		
+		'./bower_components/angular-ui-router/release/angular-ui-router.min.js',
+		'./bower_components/angular-animate/angular-animate.min.js'
+	]).pipe(gulp.dest(config.appJs()+config.vendorFolder));
+
+});
+
+//move Sass bower files to vendor folder
+gulp.task('vendor_css_setup', function() {
+	//skeleton framework
+	return gulp.src([
+		'./bower_components/skeleton-sass/skeleton/**/*.scss',
+		'./bower_components/skeleton-sass/skeleton_template.scss'
+	]).pipe(gulp.dest(config.appSass()+config.vendorFolder));
+
+});
+
+gulp.task('create_bundle',function() {
 	//concat files into bundle.js
-	gulp.src([config.appJs()+config.vendorFolder+'/angular.min.js', config.appJs()+config.vendorFolder+'/angular-animate.min.js', config.appJs()+config.vendorFolder+'/angular-ui-router.min.js'])
+	return gulp.src([config.appJs()+config.vendorFolder+'/angular.min.js', config.appJs()+config.vendorFolder+'/*','!'+config.appJs()+config.vendorFolder+'/template.js'])
 		.pipe(concat('bundle.js'))
 		.pipe(gulp.dest(config.outputJs()));
-
 });
 
 //sass files
@@ -110,7 +120,7 @@ gulp.task('watch', function() {
 
 
 //build task
-gulp.task('build', ['vendor_js_setup']);
+gulp.task('build', ['vendor_js_setup','vendor_css_setup', 'create_bundle']);
 
 //default task
 gulp.task('default', ['lint', 'sass', 'scripts','html', 'connect', 'watch']);
